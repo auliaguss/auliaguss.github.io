@@ -1,0 +1,114 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">    
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">    
+    <title>Aulia Agustina</title>
+</head>
+<body>
+    <nav class="navbar">
+      <ul class="navbar-nav">
+        <li class="logo">
+          <a href="gallery.html" class="nav-link">
+              
+            <div class="link-text logo-text">Aulia Ag</div>
+            <i class="fa fa-angle-double-right"></i>
+          </a>
+        </li>
+  
+        <li class="nav-item">
+          <a href="home.html" class="nav-link">
+            <i class="fa fa-home"></i>
+            <div class="link-text">Home</div>
+          </a>
+        </li>
+  
+        <li class="nav-item">
+          <a href="activity.html" class="nav-link">
+            <i class="fa fa-question"></i>
+            <div class="link-text">About</div>
+          </a>
+        </li>
+  
+        <li class="nav-item">
+          <a href="project.html" class="nav-link">
+            <i class="fa fa-folder"></i>
+            <div class="link-text">My Projects</div>
+          </a>
+        </li>
+  
+        <li class="nav-item">
+          <a href="contact.html" class="nav-link">
+            <i class="fa fa-phone"></i>
+            <div class="link-text">Contact</div>
+          </a>
+        </li>
+  </ul>
+    </nav>
+      <main>
+        <div class="contact flex">
+            <div class="foto">
+                <h1>Get In Touch With Me!</h1>
+            </div>
+          
+            <div class="ikon">
+                <a target="_blank" href="https://www.linkedin.com/in/aulia-agustina-0743421a1/"><i class="fa fa-linkedin"></i></a>
+                <a target="_blank" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCKCHVHvFpSlScsGmtzpVPDqvQdRWmXqBfBLpdWNqGCzpmmjTkKKJtRSFhDwvCMXcnwrSJNB"><i class="fa fa-envelope"></i></a>
+                <a target="_blank" href="https://instagram.com/auliaguss"><i class="fa fa-instagram"></i></a>
+            </div>
+
+          <div class="teks">
+            <p class="judul">Send Me Message!</p>
+            <form name="contact-form" id="contact-form" method="post">
+              <label for="fname">Your Name :</label><br>
+                <input type="text" id="fname" name="nama" required><br>
+              <label for="lname">Your Email :</label><br>
+                <input type="email" id="email" name="email" required><br>
+              <label for="lname">Write Your Message :</label><br>
+                <textarea id="pesan" name="pesan" rows="5" required></textarea><br>
+              <button name="submit" value="Submit" id="submit_form">Submit</button>
+            </form>
+            
+            <div class="response_msg"></div>
+            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+          </div>
+        </div>
+      </main>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script>
+          $(document).ready(function() {
+              $("#contact-form").on("submit", function(e) {
+                  e.preventDefault();
+                  if ($("#contact-form [name='nama']").val() === '') {
+                      $("#contact-form [name='nama']").css("border", "1px solid red");
+                  } else if ($("#contact-form [name='email']").val() === '') {
+                      $("#contact-form [name='email']").css("border", "1px solid red");
+                  } else if ($("#contact-form [name='pesan']").val() === '') {
+                      $("#contact-form [name='pesan']").css("border", "1px solid red");
+                  } else {
+                      $("#loading-img").css("display", "block");
+                      var sendData = $(this).serialize();
+                      $.ajax({
+                          type: "POST",
+                          url: "form.php",
+                          data: sendData,
+                          success: function(data) {
+                              $("#loading-img").css("display", "none");
+                              $(".response_msg").text(data);
+                              // $("#contact-form").find("input[type=text], input[type=email], textarea").val("");
+                          }
+                      });
+                  }
+              });
+              // $("#contact-form input").blur(function() {
+              //     var checkValue = $(this).val();
+              //     if (checkValue != '') {
+              //         $(this).css("border", "1px solid #eeeeee");
+              //     }
+              // });
+          });
+      </script>
+</body>
+</html>

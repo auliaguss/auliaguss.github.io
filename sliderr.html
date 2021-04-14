@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aulia Agustina</title>
+    <style>
+        
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300); 
+
+/* body{
+    font-family: 'Open Sans', sans-serif !important;
+    background:#eee !important; 
+    padding:50px;
+} */
+/* .slide-action .sld-btn:hover{
+    transition: 0.2s;
+    background: #ddd; 
+} */
+/* .latest-news{color: #cc3333; font-weight: 600; font-size: 12px; width: 90px; height: 23px; border-radius: 2px; } */
+
+/* .slideWrapper h4 {font-weight: 700; font-size: 20px; margin:5px 0 15px 0; letter-spacing: 5px; line-height: 30px; margin-left: -1px; margin-top:4px; }
+p {font-size: 14px; margin-bottom: 20px; line-height: 25px; } */
+
+/* ul#latest-news-slider {
+    padding-left: 0; 
+} */
+/* .slide-action{
+    min-height: 64px;  
+    width: 200px; 
+    float: left; 
+    margin: 0 0px
+} */
+span{
+    display:none; 
+}
+span.active{
+    display:block; 
+}
+.gmbr{
+    display:none; 
+}
+.gmbr.active{
+    display:none; 
+}
+/* .slide-action .sld-btn{ 
+    cursor:pointer; 
+    width: 38px; 
+    height: 33px; 
+    background: #fff; 
+    padding: 0px 0 0 14px; 
+    font-size: 22px; 
+    float: left; 
+    margin-right: 5px; 
+} */
+    </style>
+</head>
+<body>
+    
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   <!-- <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script> -->
+   <!-- <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css'> -->
+
+  
+   <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"> -->
+
+                <div class="slideWrapper">
+                       <div class="latest-news"> SON DAKİKA !</div>
+                       <span class="active">
+                           
+                           <h4>Haber Oku</h4>
+                           <p class="monospace_hero">Cizreli 2 kadın çocuklara engel oldu<br>
+                           Taşlama devam ederken, soyadları öğrenilemeyen Vesile ve Fatma konuşarak ve elleriyle tutarak engellemeye çalıştı. 
+                           </p>
+                       </span>
+                       <span>
+                           <h4>Savaş başladı</h4>
+                           <p class="monospace_hero">Full Kar Savaşı Başladı<br>
+                           Haber ver denen kar yağışı sabah saatlerinde başladı kadın, askerlere taş atan çocukları önce konuşarak ve . 
+                           </p>
+                       </span>
+                       <span>
+                           <h4>Judul</h4>
+                           <p class="monospace_hero">Hi<br>
+                           Ini judul 
+                           </p>
+                       </span>
+                   </div>
+                   <!-- <p class="slide-action"> -->
+                       <a class="sld-btn prev">Prev</a>
+                       <a class="sld-btn next">Next</a>
+                   <!-- </p> -->
+
+                   <script>          
+                    $('.next').click(function(){
+                      var span=$('span.active');
+            
+                      if(span.next().length>0 &&span.next().length<2)
+                      {
+                        span.removeClass('active', 100, "easeInBack");
+                        span.next().addClass('active', 100, "easeInBack");
+                        console.log(span.next().length);
+                      }else {
+                         span.removeClass('active', 100, "easeInBack");
+                         $('span').first('span').addClass('active', 100, "easeInBack");
+                      }
+                  });
+                    $('.prev').click(function(){   
+                      var span=$('span.active');
+                      if(span.prev().length>0 && span.prev().is("span"))
+                      {
+                        span.removeClass('active', 100, "easeInBack");
+                        span.prev().addClass('active', 100, "easeInBack");
+            
+                      }else {}
+                  });
+                  </script>
+</body>
+</html>
