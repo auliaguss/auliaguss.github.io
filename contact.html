@@ -61,7 +61,9 @@
 
           <div class="teks">
             <p class="judul">Send Me Message!</p>
-            <form name="contact-form" id="contact-form" method="POST" action="https://formspree.io/f/meqvoqgr">
+            <form name="contact-form" id="contact-form" method="POST" >
+            <!-- action="https://formspree.io/f/meqvoqgr" -->
+            
               <label for="fname">Your Name :</label><br>
                  <input placeholder="Ex: Aulia" type="text" id="fname" name="name" required><br>
 
@@ -76,44 +78,32 @@
               <button name="submit" value="Submit" id="submit_form">Submit</button>
             </form>
             
-            <div class="response_msg"></div>
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> -->
+            <div id="status_con"></div>
           </div>
         </div>
       </main>
-      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <script>
-          $(document).ready(function() {
-              $("#contact-form").on("submit", function(e) {
-                  e.preventDefault();
-                  if ($("#contact-form [name='nama']").val() === '') {
-                      $("#contact-form [name='nama']").css("border", "1px solid red");
-                  } else if ($("#contact-form [name='email']").val() === '') {
-                      $("#contact-form [name='email']").css("border", "1px solid red");
-                  } else if ($("#contact-form [name='pesan']").val() === '') {
-                      $("#contact-form [name='pesan']").css("border", "1px solid red");
-                  } else {
-                      $("#loading-img").css("display", "block");
-                      var sendData = $(this).serialize();
-                      $.ajax({
-                          type: "POST",
-                          url: "https://formspree.io/f/meqvoqgr",
-                          data: sendData,
-                          success: function(data) {
-                              $("#loading-img").css("display", "none");
-                              $(".response_msg").text(data);
-                              // $("#contact-form").find("input[type=text], input[type=email], textarea").val("");
-                          }
-                      });
-                  }
-              });
-              // $("#contact-form input").blur(function() {
-              //     var checkValue = $(this).val();
-              //     if (checkValue != '') {
-              //         $(this).css("border", "1px solid #eeeeee");
-              //     }
-              // });
-          });
-      </script> -->
+          var form = document.getElementById("contact-form");
+          
+          async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("status_con");
+            var data = new FormData(event.target);
+            fetch("https://formspree.io/f/meqvoqgr", {
+              method: "POST",
+              body: data,
+              headers: {
+                  'Accept': 'application/json'
+              }
+            }).then(response => {
+              status.innerHTML = "Thanks for your submission!";
+              form.reset()
+            }).catch(error => {
+              status.innerHTML = "Oops! There was a problem submitting your form"
+            });
+          }
+          form.addEventListener("submit", handleSubmit)
+      </script>
 </body>
 </html>
