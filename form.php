@@ -1,18 +1,18 @@
 <?php
 
-    $nama =  $_POST['nama'];
-    $email =  $_POST['email'];
-    $pesan =  $_POST['pesan'];
-    $sub = $_POST['subject'];
+$nama =  $_POST['nama'];
+$email =  $_POST['email'];
+$pesan =  $_POST['pesan'];
+$sub = $_POST['subject'];
 
-    $to = "auliaagustt@gmail.com";
-    $body = "From : $email \n
+$to = "auliaagustt@gmail.com";
+$body = "From : $email \n
             Name : $nama \n
             About : $pesan";
 
-    $mail($to, $sub, $body);
-    
-    echo "Thank you. I will contact you soon, " . $nama . "!";
+mail($to, $sub, $body);
+
+echo "Thank you. I will contact you soon, " . $nama . "!";
 
 // $conn = new mysqli("localhost", "id16601901_contactdb", "zU<FoXp%[aX03!/H", "id16601901_contact");
 // if ($conn->connect_error) {

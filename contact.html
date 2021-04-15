@@ -61,18 +61,18 @@
 
           <div class="teks">
             <p class="judul">Send Me Message!</p>
-            <form name="contact-form" id="contact-form" method="post">
+            <form name="contact-form" id="contact-form" method="POST" action="https://formspree.io/f/meqvoqgr">
               <label for="fname">Your Name :</label><br>
-                 <input placeholder="Ex: Aulia" type="text" id="fname" name="nama" required><br>
+                 <input placeholder="Ex: Aulia" type="text" id="fname" name="name" required><br>
 
               <label for="lname">Your Email :</label><br>
                  <input placeholder="Ex: auliaguss@gmail.com" type="email" id="email" name="email" required><br>
                 
               <label for="lname">Subject :</label><br>
-                 <input placeholder="Ex: Let's make an instagram filter!" type="text" id="subject" name="subject"><br>
+                 <input placeholder="Ex: Website Collaboration" type="text" id="subject" name="subject"><br>
 
               <label for="lname">Write Your Message :</label><br>
-                <textarea id="pesan" name="pesan" rows="5" required></textarea><br>
+                <textarea id="pesan" name="message" rows="5" required></textarea><br>
               <button name="submit" value="Submit" id="submit_form">Submit</button>
             </form>
             
@@ -81,7 +81,7 @@
           </div>
         </div>
       </main>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
       <script>
           $(document).ready(function() {
               $("#contact-form").on("submit", function(e) {
@@ -97,7 +97,7 @@
                       var sendData = $(this).serialize();
                       $.ajax({
                           type: "POST",
-                          url: "form.php",
+                          url: "https://formspree.io/f/meqvoqgr",
                           data: sendData,
                           success: function(data) {
                               $("#loading-img").css("display", "none");
@@ -114,6 +114,6 @@
               //     }
               // });
           });
-      </script>
+      </script> -->
 </body>
 </html>
