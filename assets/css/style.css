@@ -2,16 +2,13 @@
 :root {
     font-size: 16px;
     font-family: 'Open Sans';
-    --text-primary: #b6b6b6;
-    --text-secondary: #ececec;
-    --bg-primary: #23232e;
-    --bg-secondary: #141418;
     --transition-speed: 600ms;
     --hijautua:#22C1B2;
     --hijaumuda: #CCF6E2;
     --hijaumudaop:rgba(204, 246, 226, 0.3);
     --hijau:#28DBCA;
     --background: #0A192F;
+    --abu:rgba(204, 246, 226, 0.1);
 
 }
 *{
@@ -163,6 +160,7 @@ strong, u{
     color:var(--hijaumudaop);
 }
 .acti .teks{
+    color:var(--hijaumudaop);
     padding:4% 10% 10% 10%;
 }
 .judul{
@@ -343,12 +341,14 @@ input:hover, input:focus, textarea:hover, textarea:focus{
 }
 .acti a{
     background:var(--hijaumuda);
+    
+    box-shadow: 7px 4px 8px rgba(0, 0, 0, 0.25);
     font-weight: 500;
     font-size: 1.1em;
     padding:5px;
 }
 .acti .sub{
-    background:rgba(204, 246, 226, 0.1);
+    background:var(--abu);
     padding:20px;
     /* text-shadow: 1px 1px var(--background); */
 }
@@ -357,7 +357,7 @@ input:hover, input:focus, textarea:hover, textarea:focus{
     width: 250px;
     height: 250px;
     z-index: -3;
-    background: #22C1B2;
+    background: var(--hijau);
 }
 .acti * img{
     width: 350px;
@@ -396,7 +396,7 @@ input:hover, input:focus, textarea:hover, textarea:focus{
     height:100px;
     position: absolute;
     
-    background: rgba(204, 246, 226, 0.1);
+    background: var(--abu);
 }
 
 .kotaktrans:nth-child(1){
