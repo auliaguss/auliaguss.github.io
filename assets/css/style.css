@@ -350,6 +350,7 @@ input:hover, input:focus, textarea:hover, textarea:focus{
 .acti .sub{
     background:var(--abu);
     padding:20px;
+    color:var(--hijaumudaop);
     /* text-shadow: 1px 1px var(--background); */
 }
 .acti .kotak{
